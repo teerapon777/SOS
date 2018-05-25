@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>edit_user</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form novalidate #myForm="ngForm" (ngSubmit)="edit(myForm.value)">
+
+    <ion-item>
+      <ion-label>
+        password
+      </ion-label>
+      <ion-input type="text" ngModel name="password" value="adsf"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>คำนำหน้าชื่อ</ion-label>
+      <ion-select ngModel name="title_name">
+        <ion-option value="1">นาย</ion-option>
+        <ion-option value="2">นาง</ion-option>
+        <ion-option value="3">นางสาว</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        ชื่อ
+      </ion-label>
+      <ion-input type="text" ngModel name="firstname" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        สกุล
+      </ion-label>
+      <ion-input type="text" ngModel name="lastname" value="asdf"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        เบอร์โทร
+      </ion-label>
+      <ion-input type="text" ngModel name="phone" value="asdf"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button [disabled]="myForm.invalid" ion-button large full>
+        <span>บันทึก</span>
+      </button>
+    </ion-item>
+  </form>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>insert_emergency</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    {{user}}
+  </ion-item>
+  <form novalidate #myForm="ngForm" (ngSubmit)="insert(myForm.value)">
+    <ion-item>
+      <ion-label floating>
+        เหตุการณ์
+      </ion-label>
+      <ion-input type="text" ngModel name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>ประเภท</ion-label>
+      <ion-select ngModel name="category">
+        <ion-option value="1">อุบัติเหตุ</ion-option>
+        <ion-option value="2">อัคคีภัย</ion-option>
+        <ion-option value="3">เจ็บป่วย</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        รายละเอียด
+      </ion-label>
+      <ion-input type="text" ngModel name="detail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        สถานที่
+      </ion-label>
+      <ion-input type="text" ngModel name="location"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button color="danger" [disabled]="myForm.invalid" ion-button large full>
+        <span>ขอความช่วยเหลือ</span>
+      </button>
+    </ion-item>
+  </form>
+</ion-content>

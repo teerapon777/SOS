@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>เหตุฉุกเฉิน</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngFor="let item of user">
+    <p>{{item.user_id}}</p>
+  </ion-item>
+  <ion-item *ngFor="let item of user">
+    <button ion-button color="danger" outline (click)="insert(item.user_id)">เเจ้งเหตุฉุกเฉิน</button>
+  </ion-item>
+  <ion-item *ngFor="let item of user">
+    <button ion-button color="Default">ประวัติการแจ้ง</button>
+  </ion-item>
+  <ion-item *ngFor="let item of user">
+    <button ion-button color="secondary">ดูบันทึกการทำงาน</button>
+  </ion-item>
+
+</ion-content>

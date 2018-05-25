@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>user_list</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="">
+    <ion-list>
+
+      <ion-item *ngFor="let item of userList">
+        <p> {{item.firstname}} {{item.lastname}}</p>
+        <p>email : {{item.email}} / password : {{item.password}}</p>
+        <div>
+          <button (click)="del(item.user_id)" ion-button>
+            <ion-icon name="md-close"></ion-icon> ลบ
+          </button>
+          <button (click)="edit(item.user_id)" ion-button>
+            <ion-icon name="md-create"></ion-icon> แก้ไข
+          </button>
+        </div>
+
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>
