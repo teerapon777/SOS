@@ -18,6 +18,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthenServiceProvider } from '../providers/authen-service/authen-service';
 import { HttpClientModule } from '@angular/common/http';
 import { EmergencyServiceProvider } from '../providers/emergency-service/emergency-service';
+import { ListEmergencyPage } from '../pages/list-emergency/list-emergency';
+import { ShowHistoryPage } from '../pages/show-history/show-history';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { EmergencyServiceProvider } from '../providers/emergency-service/emergen
     LoginPage,
     UserListPage,
     EditUserPage,
-    InsertEmergencyPage
+    InsertEmergencyPage,
+    ListEmergencyPage,
+    ShowHistoryPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ import { EmergencyServiceProvider } from '../providers/emergency-service/emergen
     LoginPage,
     UserListPage,
     EditUserPage,
-    InsertEmergencyPage
+    InsertEmergencyPage,
+    ListEmergencyPage,
+    ShowHistoryPage
   ],
   providers: [
     StatusBar,

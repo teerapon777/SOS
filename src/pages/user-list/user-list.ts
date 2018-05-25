@@ -27,7 +27,8 @@ export class UserListPage {
   alertMSG: AlertMessage;
 
   constructor(
-    public navCtrl: NavController, public navParams: NavParams,
+    public navCtrl: NavController,
+    public navParams: NavParams,
     private alertCtrl: AlertController,
     private loadingCtrl: LoadingController,
     private authenServiceProvider: AuthenServiceProvider) {
@@ -44,7 +45,7 @@ export class UserListPage {
 
   del(user: string) {
     let loader = this.loadingCtrl.create({
-      content: "กำลังบันทึกข้อมูล....."
+      content: "กำลังลบข้อมูล....."
     });
     loader.present();
     this.authenServiceProvider.del(user).subscribe(

@@ -41,6 +41,7 @@ export class LoginPage {
 
     });
   }
+
   login(user: users) {
 
     let email = user.email;
@@ -60,7 +61,7 @@ export class LoginPage {
             buttons: ['ตกลง']
           });
           alert.present();
-          this.navCtrl.setRoot(HomePage, { email_is: email });
+          this.navCtrl.setRoot(TabsPage, { email_is: email });
         }
         else { //ถา้สถานะเท่ากบั 'error' ให้ทาํงานและแสดงขอ้ความในส่วนนÊี
           let alert = this.alertCtrl.create({

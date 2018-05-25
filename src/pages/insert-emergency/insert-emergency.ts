@@ -28,58 +28,56 @@ export class InsertEmergencyPage {
   ngOnInit() {
     this.user = this.navParams.get('user_id');
   }
-  save(input) {
+  insert(input) {
 
     let name = input.name;
     let category = input.category;
     let detail = input.detail;
     let location = input.location;
+    let user_id = this.navParams.get('user_id');
 
     let loader = this.loadingCtrl.create({
       content: "กำลังบันทึกข้อมูล...."
     });
 
     loader.present();
-    this.authServiceProvider.insert(name,
-      category, detail, location).subscribe(
-        (alertMSG: AlertMessage) => {
-          this.alertMSG = alertMSG; //รับค่าขอ้มูล json จาก provider (Backend)
-          if (this.alertMSG.status === 'ok') {
-            let alert = this.alertCtrl.create({
-              title: this.alertMSG.message,
-              buttons: ['ตกลง']
-            });
-            //console.log('signup ok');
-            alert.present();
+    this.authServiceProvider.insert(name, category, detail, location, user_id).subscribe(
+      (alertMSG: AlertMessage) => {
+        this.alertMSG = alertMSG; //รับค่าขอ้มูล json จาก provider (Backend)
+        if (this.alertMSG.status === 'ok') {
+          let alert = this.alertCtrl.create({
+            title: this.alertMSG.message,
+            buttons: ['ตกลง']
+          });
+          //console.log('signup ok');
+          alert.present();
 
-            this.navCtrl.setRoot(HomePage);
-
-          }
-          if (this.alertMSG.status === 'no') {
-            let alert = this.alertCtrl.create({
-              title: this.alertMSG.message,
-              buttons: ['ตกลง']
-            });
-            // console.log('signup not ok');
-            alert.present();
-          }
-          else { //ถา้สถานะเท่ากบั 'error' ให้ทาํงานและแสดงขอ้ความในส่วนนÊี
-            let alert = this.alertCtrl.create({
-              title: this.alertMSG.message,
-              buttons: ['ตกลง']
-            });
-            // console.log('signup not ok');
-            alert.present();
-          }
-        },
-        (error) => {
-          console.log(error);
-          loader.dismiss();
-        },
-        () => {
-          loader.dismiss();
         }
-      );
+        if (this.alertMSG.status === 'no') {
+          let alert = this.alertCtrl.create({
+            title: this.alertMSG.message,
+            buttons: ['ตกลง']
+          });
+          // console.log('signup not ok');
+          alert.present();
+        }
+        else { //ถา้สถานะเท่ากบั 'error' ให้ทาํงานและแสดงขอ้ความในส่วนนÊี
+          let alert = this.alertCtrl.create({
+            title: this.alertMSG.message,
+            buttons: ['ตกลง']
+          });
+          // console.log('signup not ok');
+          alert.present();
+        }
+      },
+      (error) => {
+        console.log(error);
+        loader.dismiss();
+      },
+      () => {
+        loader.dismiss();
+      }
+    );
   }
 
 }

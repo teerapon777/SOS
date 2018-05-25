@@ -6,6 +6,7 @@ import { InsertEmergencyPage } from '../insert-emergency/insert-emergency';
 import { AuthenServiceProvider } from '../../providers/authen-service/authen-service';
 import { users } from '../../models/user';
 import { Subscription } from 'rxjs/Subscription';
+import { ListEmergencyPage } from '../list-emergency/list-emergency';
 
 @Component({
   selector: 'page-home',
@@ -19,9 +20,10 @@ export class HomePage {
     public navParams: NavParams,
     private loadingCtrl: LoadingController,
     public AuthentServer: AuthenServiceProvider) {
+    console.log(this.navParams.data);
   }
   getDatauser() {
-    let email = this.navParams.get('email_is');
+    let email = this.navParams.data;
     this.subscription = this.AuthentServer.getDatauser(email).subscribe(
       (user: users[]) => this.user = user
     );
@@ -35,10 +37,14 @@ export class HomePage {
   }
 
   ngOnInit() {
-    this.email = this.navParams.get('email_is');
+    //this.email = this.navParams.get('email_is');
+    this.email = this.navParams.data;
   }
   insert(user: string) {
     this.navCtrl.push(InsertEmergencyPage, { user_id: user });
+  }
+  showdata(user: string) {
+    this.navCtrl.push(ListEmergencyPage, { user_id: user });
   }
 
 }
