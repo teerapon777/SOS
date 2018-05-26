@@ -15,7 +15,7 @@
     <button ion-button color="Default" (click)="showdata(item.user_id)">ประวัติการแจ้ง</button>
   </ion-item>
   <ion-item *ngFor="let item of user">
-    <button ion-button color="secondary">ดูบันทึกการทำงาน</button>
+    <button ion-button color="secondary" (click)="showhistory()">ดูบันทึกการทำงาน</button>
   </ion-item>
 
 </ion-content>

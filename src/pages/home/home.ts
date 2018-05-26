@@ -7,14 +7,17 @@ import { AuthenServiceProvider } from '../../providers/authen-service/authen-ser
 import { users } from '../../models/user';
 import { Subscription } from 'rxjs/Subscription';
 import { ListEmergencyPage } from '../list-emergency/list-emergency';
+import { ListTaskPage } from '../list-task/list-task';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+
   email: string;
   user: users[];
+
   subscription: Subscription;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -45,6 +48,9 @@ export class HomePage {
   }
   showdata(user: string) {
     this.navCtrl.push(ListEmergencyPage, { user_id: user });
+  }
+  showhistory() {
+    this.navCtrl.push(ListTaskPage);
   }
 
 }

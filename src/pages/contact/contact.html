@@ -9,14 +9,19 @@
 <ion-content>
 
   <ion-card>
-    <ion-card-header>
-      รายการ
-    </ion-card-header>
-
+    <ion-item *ngFor="let item of user">
+      <ion-card-header>
+        <p>ผู้ใช้ : {{item.firstname}} {{item.lastname}} </p>
+      </ion-card-header>
+    </ion-item>
     <ion-list>
       <button ion-item item-start (click)="UserList()">
         <ion-icon name="ios-people"></ion-icon>
         จัดการข้อมูลผู้ใช้
+      </button>
+      <button ion-item item-start (click)="logout()">
+        <ion-icon name="md-log-out"></ion-icon>
+        ออกจากระบบ
       </button>
 
     </ion-list>

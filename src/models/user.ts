@@ -7,5 +7,5 @@ export interface users {
     lastname: string;
     number_phone: string;
     image: string
-    status: string;
+    status_name: string;
 }

@@ -11,12 +11,12 @@
   <div class="">
     <ion-list>
       <ion-item *ngFor="let item of emer">
-        <p>{{item.emergency_name}} </p>
-        <p>{{item.emergency_category}} </p>
-        <p>{{item.emergency_detail}}</p>
-        <p>{{item.emergency_date}} </p>
-        <p>{{item.emergency_location}} </p>
-        <p>{{item.status}} </p>
+
+        <p>เหตุการ : {{item.category_name}} </p>
+        <p>รายละเอียด : {{item.emergency_detail}}</p>
+        <p>วันที่/เวลา : {{item.emergency_date}} </p>
+        <p>สถานที่ : {{item.emergency_location}} </p>
+        <p>สถานะ : {{item.status_name}} </p>
       </ion-item>
     </ion-list>
   </div>

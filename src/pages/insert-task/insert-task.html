@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>insert_task</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form novalidate #myForm="ngForm" (ngSubmit)="insert(myForm.value)">
+    <ion-item>
+      <ion-label floating>
+        รายละเอียด
+      </ion-label>
+      <ion-textarea type="text" ngModel name="detail"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <button ion-button large full>
+        <span>บัทนทึก</span>
+      </button>
+    </ion-item>
+  </form>
+</ion-content>

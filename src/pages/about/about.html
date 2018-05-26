@@ -1,9 +1,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons end>
-      <button ion-button icon-only color="royal" (click)="showHistory()">
+
+      <button *ngFor="let item of user" ion-button icon-only color="royal" (click)="showHistory(item.user_id)">
         <ion-icon name="search"></ion-icon>
       </button>
+
     </ion-buttons>
     <ion-title>เหตุการฉุกเฉิน</ion-title>
 
@@ -11,19 +13,21 @@
 </ion-header>
 
 <ion-content padding>
+
   <div class="">
     <ion-list>
       <ion-item *ngFor="let item of emerAll">
-        <p>{{item.emergency_name}} </p>
-        <p>{{item.emergency_category}} </p>
-        <p>{{item.emergency_detail}}</p>
-        <p>{{item.emergency_date}} </p>
-        <p>{{item.emergency_location}} </p>
-        <p>{{item.status}} </p>
+        <p>เหตุการ : {{item.category_name}} </p>
+        <p>รายละเอียด : {{item.emergency_detail}}</p>
+        <p>วันที่/เวลา : {{item.emergency_date}} </p>
+        <p>สถานที่ : {{item.emergency_location}} </p>
+        <p>ผู้เเจ้ง : {{item.firstname}} {{item.lastname}} </p>
+        <p>สถานะ : {{item.status_name}} </p>
         <button (click)="update(item.emergency_id)" ion-button>
           <ion-icon name="md-create"></ion-icon> รับทราบไปทันที
         </button>
       </ion-item>
+
     </ion-list>
   </div>
 </ion-content>

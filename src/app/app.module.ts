@@ -20,6 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmergencyServiceProvider } from '../providers/emergency-service/emergency-service';
 import { ListEmergencyPage } from '../pages/list-emergency/list-emergency';
 import { ShowHistoryPage } from '../pages/show-history/show-history';
+import { TaskServiceProvider } from '../providers/task-service/task-service';
+import { InsertTaskPage } from '../pages/insert-task/insert-task';
+import { ListTaskPage } from '../pages/list-task/list-task';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { ShowHistoryPage } from '../pages/show-history/show-history';
     EditUserPage,
     InsertEmergencyPage,
     ListEmergencyPage,
-    ShowHistoryPage
+    ShowHistoryPage,
+    InsertTaskPage,
+    ListTaskPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,9 @@ import { ShowHistoryPage } from '../pages/show-history/show-history';
     EditUserPage,
     InsertEmergencyPage,
     ListEmergencyPage,
-    ShowHistoryPage
+    ShowHistoryPage,
+    InsertTaskPage,
+    ListTaskPage
   ],
   providers: [
     StatusBar,
@@ -60,7 +67,8 @@ import { ShowHistoryPage } from '../pages/show-history/show-history';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthenServiceProvider,
     Geolocation,
-    EmergencyServiceProvider
+    EmergencyServiceProvider,
+    TaskServiceProvider
   ]
 })
 export class AppModule { }
