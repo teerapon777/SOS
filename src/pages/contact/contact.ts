@@ -5,6 +5,7 @@ import { AuthenServiceProvider } from '../../providers/authen-service/authen-ser
 import { LoadedModule } from 'ionic-angular/util/module-loader';
 import { users } from '../../models/user';
 import { Subscription } from 'rxjs/Subscription';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-contact',
@@ -37,6 +38,9 @@ export class ContactPage {
 
   ionViewWillLeave() {
     this.subscription.unsubscribe();
+  }
+  logout() {
+    this.navCtrl.setRoot(LoginPage);
   }
 
   ngOnInit() {

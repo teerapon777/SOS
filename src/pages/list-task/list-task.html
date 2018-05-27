@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>list_task</ion-title>
+    <ion-title>ข้อมูลการทำงาน</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -10,11 +10,10 @@
   <div class="">
     <ion-list>
       <ion-item *ngFor="let item of task">
-        <p>{{item.emergency_id}} </p>
-        <p>{{item.user_id}} </p>
-        <p>{{item.emergency_detail}}</p>
-        <p>{{item.date}} </p>
-        <p>{{item.detail}} </p>
+        <p>เหตุการ : {{item.emergency_name}} </p>
+        <p>ผู้บันทึก : {{item.firstname}} {{item.lastname}}</p>
+        <p>รายละเอียด : {{item.detail}}</p>
+        <p>วันที่ลงบันทึก : {{item.date}} </p>
       </ion-item>
     </ion-list>
   </div>

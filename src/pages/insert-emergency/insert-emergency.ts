@@ -25,16 +25,16 @@ export class InsertEmergencyPage {
     console.log('ionViewDidLoad InsertEmergencyPage');
   }
 
-  ngOnInit() {
+  /*ngOnInit() {
     this.user = this.navParams.get('user_id');
-  }
+  }*/
   insert(input) {
 
     let name = input.name;
     let category = input.category;
     let detail = input.detail;
     let location = input.location;
-    let user_id = this.navParams.get('user_id');
+    let user_id = input.phone;
 
     let loader = this.loadingCtrl.create({
       content: "กำลังบันทึกข้อมูล...."

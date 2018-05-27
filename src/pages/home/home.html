@@ -1,21 +1,17 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>เหตุฉุกเฉิน</ion-title>
+    <ion-title>หน้าหลัก</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-
-  </ion-item>
-  <ion-item *ngFor="let item of user">
-    <button ion-button color="danger" outline (click)="insert(item.user_id)">เเจ้งเหตุฉุกเฉิน</button>
-  </ion-item>
-  <ion-item *ngFor="let item of user">
-    <button ion-button color="Default" (click)="showdata(item.user_id)">ประวัติการแจ้ง</button>
-  </ion-item>
-  <ion-item *ngFor="let item of user">
-    <button ion-button color="secondary" (click)="showhistory()">ดูบันทึกการทำงาน</button>
-  </ion-item>
-
+  <ion-card>
+    <img src="assets/imgs/card-saopaolo.png" />
+  </ion-card>
+  <ion-card>
+    <button ion-button block color="secondary" (click)="show_tel()">เบอร์โทรฉุกเฉิน</button>
+    <button ion-button block color="danger" (click)="insert()">เเจ้งเหตุฉุกเฉิน</button>
+    <button ion-button block color="Default" (click)="showdata()">ดูรายการเหตุฉุกเฉิน</button>
+    <button ion-button block color="neng" (click)="showhistory()">ดูบันทึกการทำงาน</button>
+  </ion-card>
 </ion-content>

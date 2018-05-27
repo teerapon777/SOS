@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>เบอร์โทรฉุกเฉิน</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <div class="">
+    <ion-list>
+      <ion-item *ngFor="let item of items">
+        <p>{{item.Department_name}} : โทร. {{item.Department_tel}} </p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

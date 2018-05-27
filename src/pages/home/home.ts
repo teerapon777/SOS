@@ -8,6 +8,7 @@ import { users } from '../../models/user';
 import { Subscription } from 'rxjs/Subscription';
 import { ListEmergencyPage } from '../list-emergency/list-emergency';
 import { ListTaskPage } from '../list-task/list-task';
+import { ListTelPage } from '../list-tel/list-tel';
 
 @Component({
   selector: 'page-home',
@@ -43,11 +44,14 @@ export class HomePage {
     //this.email = this.navParams.get('email_is');
     this.email = this.navParams.data;
   }
-  insert(user: string) {
-    this.navCtrl.push(InsertEmergencyPage, { user_id: user });
+  show_tel() {
+    this.navCtrl.push(ListTelPage);
   }
-  showdata(user: string) {
-    this.navCtrl.push(ListEmergencyPage, { user_id: user });
+  insert() {
+    this.navCtrl.push(InsertEmergencyPage);
+  }
+  showdata() {
+    this.navCtrl.push(ListEmergencyPage);
   }
   showhistory() {
     this.navCtrl.push(ListTaskPage);

@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>insert_emergency</ion-title>
+    <ion-title>ขอความช่วยเหลือ</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -33,6 +33,12 @@
         สถานที่
       </ion-label>
       <ion-input type="text" ngModel name="location"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        เบอร์โทร
+      </ion-label>
+      <ion-input type="text" ngModel name="phone"></ion-input>
     </ion-item>
     <ion-item>
       <button color="danger" [disabled]="myForm.invalid" ion-button large full>

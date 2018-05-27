@@ -41,7 +41,9 @@ export class LoginPage {
 
     });
   }
-
+  home() {
+    this.navCtrl.setRoot(HomePage);
+  }
   login(user: users) {
 
     let email = user.email;
@@ -82,7 +84,7 @@ export class LoginPage {
     );
   }
 
-  save(formSignup) {
+  /*save(formSignup) {
 
     let email = formSignup.email;
     let password = formSignup.password;
@@ -136,7 +138,7 @@ export class LoginPage {
           loader.dismiss();
         }
       );
-  }
+  }*/
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }

@@ -8,4 +8,5 @@ export interface users {
     number_phone: string;
     image: string
     status_name: string;
+    status: string;
 }

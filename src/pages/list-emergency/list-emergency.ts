@@ -25,8 +25,8 @@ export class ListEmergencyPage {
     this.user = this.navParams.get('user_id');
   }
   getDataEmer() {
-    let id = this.navParams.get('user_id');
-    this.subscription = this.emergencytServer.getDataEmer(id).subscribe(
+    //let id = this.navParams.get('user_id');
+    this.subscription = this.emergencytServer.getDataEmer().subscribe(
       (emer: emergency[]) => this.emer = emer
     );
   }

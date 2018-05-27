@@ -70,7 +70,7 @@ export class AboutPage {
             buttons: ['ตกลง']
           });
           alert.present();
-          this.navCtrl.setRoot(AboutPage);
+          this.navCtrl.push(AboutPage);
         } else {
           let alert = this.alertCtrl.create({
             title: this.alertMSG.message,

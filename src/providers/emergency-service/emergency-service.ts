@@ -20,11 +20,10 @@ export class EmergencyServiceProvider {
   constructor(public http: HttpClient) {
     console.log('Hello EmergencyServiceProvider Provider');
   }
-  getDataEmer(id: string): Observable<emergency[]> {
+  getDataEmer(): Observable<emergency[]> {
     const header = { 'Content-Type': 'application/json' };
     let data = {
-      'cmd': 'select',
-      'user_id': id
+      'cmd': 'select'
     };
     return this.http.post<emergency[]>(this.apiUrl, data, { headers: header })
   }

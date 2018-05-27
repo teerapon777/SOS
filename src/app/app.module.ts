@@ -23,6 +23,8 @@ import { ShowHistoryPage } from '../pages/show-history/show-history';
 import { TaskServiceProvider } from '../providers/task-service/task-service';
 import { InsertTaskPage } from '../pages/insert-task/insert-task';
 import { ListTaskPage } from '../pages/list-task/list-task';
+import { TelServiceProvider } from '../providers/tel-service/tel-service';
+import { ListTelPage } from '../pages/list-tel/list-tel';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { ListTaskPage } from '../pages/list-task/list-task';
     ListEmergencyPage,
     ShowHistoryPage,
     InsertTaskPage,
-    ListTaskPage
+    ListTaskPage,
+    ListTelPage
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { ListTaskPage } from '../pages/list-task/list-task';
     ListEmergencyPage,
     ShowHistoryPage,
     InsertTaskPage,
-    ListTaskPage
+    ListTaskPage,
+    ListTelPage
   ],
   providers: [
     StatusBar,
@@ -68,7 +72,8 @@ import { ListTaskPage } from '../pages/list-task/list-task';
     AuthenServiceProvider,
     Geolocation,
     EmergencyServiceProvider,
-    TaskServiceProvider
+    TaskServiceProvider,
+    TelServiceProvider
   ]
 })
 export class AppModule { }

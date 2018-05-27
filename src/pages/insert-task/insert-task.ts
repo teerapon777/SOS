@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, AlertController, LoadingController
 import { FormBuilder } from '@angular/forms';
 import { TaskServiceProvider } from '../../providers/task-service/task-service';
 import { AlertMessage } from '../../models/msg';
+import { ShowHistoryPage } from '../show-history/show-history';
+import { ListTaskPage } from '../list-task/list-task';
 
 /**
  * Generated class for the InsertTaskPage page.
@@ -56,7 +58,7 @@ export class InsertTaskPage {
           });
           //console.log('signup ok');
           alert.present();
-
+          this.navCtrl.push(ListTaskPage);
 
         }
         if (this.alertMSG.status === 'no') {
